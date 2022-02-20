@@ -7,11 +7,13 @@ The messages are generated at random intervals to make it harder to ignore them.
 
 The script works in Ubuntu. Could work in other *nixes.
 
-Just add the script to cron at the time when you should go to bed. For example:
+It makes sense to manually launch the script first, to see if it works in your OS. In a few seconds after the launch, you should see a popup and hear a synthetic voice reminding you to go to bed. 
 
-```0 20 * * * path/to/sleepReminder```
+If it works, add the script to cron, like this:
 
-It makes sense to manually launch it first, to see if it works in your OS. In a few seconds after the launch, you should see a popup and hear a synthetic voice reminding you to go to bed. 
+```3 20 * * * XDG_RUNTIME_DIR=/run/user/$(id -u) /bin/bash '/PATH_TO/sleepReminder'```
+
+Don't forget to replace `PATH_TO` with your own path.
 
 # Customisation
 
