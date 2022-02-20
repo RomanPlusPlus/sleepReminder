@@ -1,0 +1,19 @@
+#!/bin/bash
+# This bash script generates periodic popup and a voice messages, reminding you to go to bed.
+# The messages are generated at random intervals to make it harder to ignore them.
+# Just add this script to cron at the time when you should go to bed. For example:
+# 0 20 * * * path/to/sleepReminder
+# The script works in Ubuntu. Could work in other *nixes.
+# ################## SETTINGS ####################
+msg='Are you not sleeping yet?!'
+min_delay_sec=2
+max_delay_sec=5
+# ################## END OF SETTINGS #############
+while :
+do
+    random_num=$(shuf -i "$min_delay_sec"-"$max_delay_sec" -n1)
+	notify-send "$msg" # generates a popup in Ubuntu
+	spd-say "$msg" # plays a synthetic voice sound
+	echo "a $random_num sec delay"
+	sleep "$random_num"
+done
