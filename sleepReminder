@@ -7,7 +7,7 @@
 # ################## SETTINGS ####################
 msg='Are you not sleeping yet?!'
 min_delay_sec=2
-max_delay_sec=3
+max_delay_sec=10
 max_repeats=5
 # ################## END OF SETTINGS #############
 for i in $(seq "$max_repeats")
