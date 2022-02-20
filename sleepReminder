@@ -7,9 +7,10 @@
 # ################## SETTINGS ####################
 msg='Are you not sleeping yet?!'
 min_delay_sec=2
-max_delay_sec=5
+max_delay_sec=3
+max_repeats=5
 # ################## END OF SETTINGS #############
-while :
+for i in $(seq "$max_repeats")
 do
     random_num=$(shuf -i "$min_delay_sec"-"$max_delay_sec" -n1)
 	notify-send "$msg" # generates a popup in Ubuntu
